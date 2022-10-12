@@ -1,0 +1,16 @@
+.meal-card {
+    display: flex;
+    img {
+        width: 100px;
+    }
+    .meal-card-text {
+        margin: 10px;
+        
+        ion-card-title {
+            margin-bottom: 3px;
+        }
+        ion-card-subtitle {
+            margin-bottom: 2px;
+        }
+    }
+}

@@ -25,3 +25,10 @@
 #container a {
   text-decoration: none;
 }
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 0 10px 0 10px;
+}

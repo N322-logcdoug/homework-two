@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>List of Meals {{query}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button
+        routerLink="/home"
+        routerDirection="forward"
+      ></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card
+    *ngFor="let meal of meals.meals;let indexOfelement=index;"
+    routerLink="/recipes/{{indexOfelement}}"
+    routerDirection="forward"
+  >
+    <div class="meal-card">
+      <img src="{{meal.strMealThumb}}" alt="" />
+      <div class="meal-card-text">
+        <ion-card-title>{{meal.strMeal}}</ion-card-title>
+        <ion-card-subtitle>Category: {{meal.strCategory}}</ion-card-subtitle>
+        <ion-card-subtitle>Region: {{meal.strArea}}</ion-card-subtitle>
+      </div>
+    </div>
+  </ion-card>
+</ion-content>

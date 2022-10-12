@@ -1,20 +1,41 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title> MealDB API Homework 2 </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="home-content">
+    <div class="random">
+      <h1>Random Meal</h1>
+      <ion-button
+        (click)="randomMeal()"
+        routerLink="/recipes/0"
+        routerDirection="forward"
+        >Generate</ion-button
+      >
+    </div>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <div class="search">
+      <h1>Meal Search</h1>
+      <ion-searchbar id="meal-search" ngModel #mealSearch></ion-searchbar>
+      <ion-button
+        (click)="searchMeal()"
+        routerLink="/list"
+        routerDirection="forward"
+        >Search</ion-button
+      >
+    </div>
+    <div class="letter-search">
+      <h1>Meal Search by Letter</h1>
+      <ion-select
+        placeholder="Select letter"
+        (ionChange)="searchLetter($event)"
+      >
+        <ion-select-option *ngFor="let letter of letters" value="{{letter}}"
+          >{{letter}}</ion-select-option
+        >
+      </ion-select>
+    </div>
   </div>
 </ion-content>
